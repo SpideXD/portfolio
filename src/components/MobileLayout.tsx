@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ScrambleText } from './ScrambleText';
 import { ExpertiseSection } from './ExpertiseSection';
 import { ProcessTimeline } from './ProcessTimeline';
-import { Github, ExternalLink, ArrowUpRight, MapPin, Clock, Copy, Check } from 'lucide-react';
+import { Github, ExternalLink, ArrowUpRight, MapPin, Clock, Copy, Check, Monitor, X } from 'lucide-react';
 
 const projects = [
   { title: 'SystemSim', type: 'Distributed Systems Platform', year: '2025', desc: 'A reality-grounded distributed systems simulator. Innovated an ACID-like Isolation architecture for emergent resource contention.', tech: ['Go', 'gRPC', 'WebSocket', 'PostgreSQL', 'Redis', 'Docker'], link: 'https://github.com/TheSpideX/SystemSim' },
@@ -15,6 +15,7 @@ export const MobileLayout = () => {
   const badges = ['Open for Freelance', 'IIT Dhanbad CSE', 'AI-Augmented Builder'];
   const [copied, setCopied] = useState(false);
   const [time, setTime] = useState('');
+  const [showDesktopDialog, setShowDesktopDialog] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => setBadgeIdx(i => (i + 1) % badges.length), 3000);
@@ -36,6 +37,42 @@ export const MobileLayout = () => {
 
   return (
     <div className="relative z-10 min-h-screen text-white font-sans">
+      {/* Desktop Recommendation Dialog */}
+      {showDesktopDialog && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-black/80 backdrop-blur-md">
+          <div className="bg-zinc-950 border border-white/10 rounded-2xl p-8 max-w-sm w-full shadow-2xl">
+            <div className="flex justify-between items-start mb-6">
+              <div className="w-12 h-12 bg-[#ccff00]/10 border border-[#ccff00]/30 rounded-xl flex items-center justify-center">
+                <Monitor className="w-6 h-6 text-[#ccff00]" />
+              </div>
+              <button 
+                onClick={() => setShowDesktopDialog(false)}
+                className="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:border-[#ccff00]/50 transition-colors"
+              >
+                <X className="w-4 h-4 text-gray-400" />
+              </button>
+            </div>
+            
+            <h3 className="text-2xl font-display uppercase text-white mb-3">Better on Desktop</h3>
+            <p className="font-mono text-sm text-gray-400 leading-relaxed mb-6">
+              This portfolio features an infinite canvas with physics simulation, 3D terrain, and interactive nodes — best experienced on a desktop browser.
+            </p>
+            
+            <div className="flex flex-col gap-3">
+              <button 
+                onClick={() => setShowDesktopDialog(false)}
+                className="w-full bg-[#ccff00] text-black font-mono font-bold text-sm py-3 rounded-full hover:scale-105 transition-transform uppercase tracking-widest"
+              >
+                Continue on Mobile
+              </button>
+              <p className="font-mono text-[10px] text-gray-600 text-center uppercase tracking-widest">
+                Fully optimized for desktop browsers
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+      
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center px-6 py-20">
         <div className="mb-6 inline-flex items-center gap-3 bg-[#ccff00]/10 border border-[#ccff00]/30 px-4 py-2 rounded-full w-fit">
