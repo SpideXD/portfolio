@@ -8,6 +8,9 @@ import ContactForm from './components/ContactForm';
 import { PhysicsStack } from './components/PhysicsStack';
 import { ProcessTimeline } from './components/ProcessTimeline';
 import { ExpertiseSection } from './components/ExpertiseSection';
+import { ScrambleText } from './components/ScrambleText';
+import { MobileLayout } from './components/MobileLayout';
+import { useIsMobile } from './hooks/useIsMobile';
 import Matter from 'matter-js';
 import { useAudio } from './contexts/AudioContext';
 
@@ -23,40 +26,7 @@ export const PhysicsContext = createContext<PhysicsContextType>({
   setIsDragging: () => { }
 });
 
-// Text Scramble Component
-const ScrambleText = ({ text, className = "" }: { text: string, className?: string }) => {
-  const [displayText, setDisplayText] = useState(text);
-  const chars = '!<>-_\\/[]{}-=+*^?#________';
 
-  const scramble = () => {
-    let iteration = 0;
-    const interval = setInterval(() => {
-      setDisplayText(prev =>
-        prev.split('').map((letter, index) => {
-          if (index < iteration) {
-            return text[index];
-          }
-          return chars[Math.floor(Math.random() * chars.length)];
-        }).join('')
-      );
-
-      if (iteration >= text.length) {
-        clearInterval(interval);
-      }
-
-      iteration += 1 / 3;
-    }, 30);
-  };
-
-  return (
-    <span
-      className={className}
-      onMouseEnter={scramble}
-    >
-      {displayText}
-    </span>
-  );
-};
 
 // Magnetic Hover Component
 export const Magnetic = ({ children, className = "" }: { children: React.ReactElement, className?: string }) => {
@@ -889,6 +859,7 @@ const StartNodeContent = ({ started, onStart, loadingProgress }: { started: bool
 };
 
 export default function App() {
+  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [experienceStarted, setExperienceStarted] = useState(false);
@@ -898,6 +869,18 @@ export default function App() {
   const { startHum, stopHum, isMuted, toggleMute, playUnlock, playWhoosh } = useAudio();
   const [discoveredNodes, setDiscoveredNodes] = useState<string[]>(['node-hero']);
   const discoveredNodesRef = useRef<Set<string>>(new Set(['node-hero']));
+
+  // Mobile layout with 3D background
+  if (isMobile) {
+    return (
+      <div className="relative w-full h-screen text-white font-sans overflow-x-hidden overflow-y-auto">
+        <Background3D transformRef={transformRef} />
+        <div className="grid-bg fixed inset-0 pointer-events-none" />
+        <div className="noise-bg fixed inset-0 pointer-events-none" />
+        <MobileLayout />
+      </div>
+    );
+  }
 
   const handleStart = (mode: 'explore' | 'direct') => {
     setExperienceStarted(true);
