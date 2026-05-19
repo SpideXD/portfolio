@@ -212,12 +212,15 @@ export const MobileLayout = () => {
           {copied ? 'Copied!' : 'satyamiitdnbd@gmail.com'}
         </button>
 
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center flex-wrap">
           <a href="https://github.com/TheSpideX" target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-gray-400 hover:text-[#ccff00] transition-colors uppercase tracking-widest">
             GitHub
           </a>
           <a href="https://www.linkedin.com/in/kumar-satyam-64a807255" target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-gray-400 hover:text-[#ccff00] transition-colors uppercase tracking-widest">
             LinkedIn
+          </a>
+          <a href="https://leetcode.com/u/spideX/" target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-gray-400 hover:text-[#ccff00] transition-colors uppercase tracking-widest">
+            LeetCode
           </a>
         </div>
       </section>

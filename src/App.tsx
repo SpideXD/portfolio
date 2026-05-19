@@ -1292,7 +1292,7 @@ function DesktopApp() {
                   </Magnetic>
 
                   {/* Copy Email Button */}
-                  <div className="absolute bottom-24 z-20">
+                  <div className="absolute bottom-24 z-20 flex flex-col items-center gap-4">
                     {(() => {
                       const [copied, setCopied] = useState(false);
                       return (
@@ -1309,6 +1309,19 @@ function DesktopApp() {
                         </button>
                       );
                     })()}
+                    
+                    {/* Social Links */}
+                    <div className="flex gap-4">
+                      <a href="https://github.com/TheSpideX" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] text-gray-500 hover:text-[#ccff00] transition-colors uppercase tracking-widest mix-blend-difference">
+                        GitHub
+                      </a>
+                      <a href="https://www.linkedin.com/in/kumar-satyam-64a807255" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] text-gray-500 hover:text-[#ccff00] transition-colors uppercase tracking-widest mix-blend-difference">
+                        LinkedIn
+                      </a>
+                      <a href="https://leetcode.com/u/spideX/" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] text-gray-500 hover:text-[#ccff00] transition-colors uppercase tracking-widest mix-blend-difference">
+                        LeetCode
+                      </a>
+                    </div>
                   </div>
 
                   {/* Decorative rotating border inside */}

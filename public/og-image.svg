@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#09090b"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Lime glow -->
+  <circle cx="950" cy="315" r="300" fill="rgba(204,255,0,0.08)"/>
+  <circle cx="950" cy="315" r="150" fill="rgba(204,255,0,0.05)"/>
+  
+  <!-- Spider icon (top right) -->
+  <g transform="translate(1050, 80) scale(0.8)" opacity="0.3">
+    <circle cx="32" cy="28" r="8" fill="#ccff00"/>
+    <ellipse cx="32" cy="40" rx="6" ry="10" fill="#ccff00"/>
+    <path d="M26 24 L14 12" stroke="#ccff00" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M24 28 L10 22" stroke="#ccff00" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M38 24 L50 12" stroke="#ccff00" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M40 28 L54 22" stroke="#ccff00" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M26 36 L14 44" stroke="#ccff00" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M26 42 L10 50" stroke="#ccff00" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M38 36 L50 44" stroke="#ccff00" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M38 42 L54 50" stroke="#ccff00" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Badge -->
+  <rect x="80" y="180" width="220" height="40" rx="20" fill="rgba(204,255,0,0.1)" stroke="rgba(204,255,0,0.3)" stroke-width="1"/>
+  <circle cx="105" cy="200" r="4" fill="#ccff00"/>
+  <text x="120" y="205" fill="#ccff00" font-family="monospace" font-size="12" text-transform="uppercase" letter-spacing="3">OPEN FOR FREELANCE</text>
+  
+  <!-- Name -->
+  <text x="80" y="320" fill="white" font-family="Arial, sans-serif" font-size="100" font-weight="900" letter-spacing="-2">KUMAR</text>
+  <text x="80" y="420" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" font-family="Arial, sans-serif" font-size="100" font-weight="900" letter-spacing="-2">SATYAM</text>
+  
+  <!-- Subtitle -->
+  <text x="80" y="480" fill="#666" font-family="monospace" font-size="18" letter-spacing="2">SYSTEMS ARCHITECT &amp; BREAKTHROUGH ENGINEER</text>
+  
+  <!-- URL -->
+  <text x="1050" y="590" fill="#ccff00" font-family="monospace" font-size="16" text-anchor="end" letter-spacing="2">SPIDEXLAB.ME</text>
+</svg>
