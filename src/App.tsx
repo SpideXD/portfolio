@@ -1246,7 +1246,7 @@ export default function App() {
                     <div
                       key={index}
                       onClick={() => setSelectedProject(item)}
-                      className="group relative border-b border-white/20 py-10 flex justify-between items-center cursor-pointer hover:px-12 transition-all duration-500 hover:bg-[#ccff00]/5 backdrop-blur-sm"
+                      className="group relative border-b border-white/20 py-10 flex justify-between items-center cursor-pointer hover:px-12 transition-all duration-500 hover:bg-[#ccff00]/5 backdrop-blur-sm no-drag"
                       data-cursor="VIEW"
                       style={{ transform: `translateZ(${60 + index * 20}px)`, transformStyle: 'preserve-3d' }}
                     >
