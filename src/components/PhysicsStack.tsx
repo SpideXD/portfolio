@@ -55,16 +55,16 @@ export const PhysicsStack = ({ width = 1600, height = 600 }: { width?: number; h
         Matter.Runner.run(runner, engine);
 
         const skills = [
-            { text: 'React', color: '#ccff00' }, { text: 'Next.js', color: '#ccff00' },
-            { text: 'TypeScript', color: '#ccff00' }, { text: 'Three.js', color: '#ccff00' },
-            { text: 'GSAP', color: '#ccff00' }, { text: 'WebGL', color: '#ccff00' },
-            { text: 'Motion', color: '#ccff00' }, { text: 'Tailwind', color: '#ccff00' },
-            { text: 'Node.js', color: '#60a5fa' }, { text: 'Postgres', color: '#60a5fa' },
-            { text: 'Supabase', color: '#60a5fa' }, { text: 'Docker', color: '#60a5fa' },
-            { text: 'AWS', color: '#60a5fa' }, { text: 'Redis', color: '#60a5fa' },
-            { text: 'Figma', color: '#c084fc' }, { text: 'Spline', color: '#c084fc' },
-            { text: 'Cinema4D', color: '#c084fc' }, { text: 'Blender', color: '#c084fc' },
-            { text: 'Typography', color: '#c084fc' }, { text: 'UX/UI', color: '#c084fc' }
+            { text: 'C++', color: '#ccff00' }, { text: 'Go', color: '#ccff00' },
+            { text: 'Kotlin', color: '#ccff00' }, { text: 'TypeScript', color: '#ccff00' },
+            { text: 'React', color: '#ccff00' }, { text: 'gRPC', color: '#ccff00' },
+            { text: 'WebSocket', color: '#ccff00' }, { text: 'Docker', color: '#ccff00' },
+            { text: 'PostgreSQL', color: '#60a5fa' }, { text: 'Redis', color: '#60a5fa' },
+            { text: 'Yggdrasil', color: '#60a5fa' }, { text: 'CAF', color: '#60a5fa' },
+            { text: 'JNI', color: '#60a5fa' }, { text: 'CGO', color: '#60a5fa' },
+            { text: 'AI Tools', color: '#c084fc' }, { text: 'System Design', color: '#c084fc' },
+            { text: 'Architecture', color: '#c084fc' }, { text: 'Algorithms', color: '#c084fc' },
+            { text: 'Any Stack', color: '#c084fc' }, { text: 'Breakthroughs', color: '#c084fc' }
         ];
 
         const bodies: Matter.Body[] = [];
