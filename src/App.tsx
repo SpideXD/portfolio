@@ -1303,13 +1303,13 @@ export default function App() {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            navigator.clipboard.writeText('hello@example.com');
+                            navigator.clipboard.writeText('satyamiitdnbd@gmail.com');
                             setCopied(true);
                             setTimeout(() => setCopied(false), 2000);
                           }}
                           className="font-mono text-lg border-b-2 border-white/30 pb-1 hover:text-[#ccff00] hover:border-[#ccff00] transition-colors mix-blend-difference cursor-pointer"
                         >
-                          {copied ? 'COPIED TO CLIPBOARD' : 'hello@example.com'}
+                          {copied ? 'COPIED TO CLIPBOARD' : 'satyamiitdnbd@gmail.com'}
                         </button>
                       );
                     })()}
@@ -1332,14 +1332,14 @@ export default function App() {
                     {/* Content */}
                     <div className="flex items-center gap-2 mb-2" style={{ transform: 'translateZ(40px)' }}>
                       <span className="w-2 h-2 rounded-full bg-[#ccff00] animate-pulse" />
-                      <span className="font-mono text-xs text-[#ccff00] uppercase tracking-[0.2em] relative z-10">Available for Work</span>
+                      <span className="font-mono text-xs text-[#ccff00] uppercase tracking-[0.2em] relative z-10">Available for Freelance</span>
                     </div>
                     <h2 className="text-[100px] font-display uppercase text-white leading-[0.85] tracking-tighter mb-4 transition-transform duration-500 group-hover:scale-105 origin-left relative z-10 w-full" style={{ transform: 'translateZ(100px)' }}>
-                      <ScrambleText text="YOUR" /><br />
-                      <span className="text-[#ccff00]">NAME</span>
+                      <ScrambleText text="KUMAR" /><br />
+                      <span className="text-[#ccff00]">SATYAM</span>
                     </h2>
                     <p className="font-mono text-gray-500 text-sm uppercase tracking-[0.18em] relative z-10" style={{ transform: 'translateZ(60px)' }}>
-                      Creative Developer &amp; Motion Designer
+                      Systems Architect &amp; Idea-First Builder
                     </p>
                   </div>
 
@@ -1375,7 +1375,7 @@ export default function App() {
                       if (!statsRef.current) return;
                       if (!counted) {
                         setCounted(true);
-                        const targets = [5, 30, 8];
+                        const targets = [3, 300, 859];
                         targets.forEach((target, i) => {
                           gsap.to({ v: 0 }, { v: target, duration: 1.5, delay: 0.8 + i * 0.2, ease: 'power2.out', onUpdate: function () { setVals(prev => { const n = [...prev]; n[i] = Math.round(this.targets()[0].v); return n; }); } });
                         });
@@ -1391,9 +1391,9 @@ export default function App() {
                         </div>
                         {/* Content */}
                         <div className="grid grid-cols-2 gap-6 relative z-10" style={{ transform: 'translateZ(50px)' }}>
-                          <div><div className="font-display text-5xl">{vals[0]}+</div><div className="font-mono text-xs uppercase tracking-widest mt-1 opacity-70">Years Exp</div></div>
-                          <div><div className="font-display text-5xl">{vals[1]}</div><div className="font-mono text-xs uppercase tracking-widest mt-1 opacity-70">Projects</div></div>
-                          <div><div className="font-display text-5xl">{vals[2]}</div><div className="font-mono text-xs uppercase tracking-widest mt-1 opacity-70">Awards</div></div>
+                          <div><div className="font-display text-5xl">{vals[0]}</div><div className="font-mono text-xs uppercase tracking-widest mt-1 opacity-70">Novel Systems</div></div>
+                          <div><div className="font-display text-5xl">{vals[1]}+</div><div className="font-mono text-xs uppercase tracking-widest mt-1 opacity-70">LeetCode Solved</div></div>
+                          <div><div className="font-display text-5xl">{vals[2] / 100}</div><div className="font-mono text-xs uppercase tracking-widest mt-1 opacity-70">CGPA / 10</div></div>
                           <div><div className="font-display text-5xl">∞</div><div className="font-mono text-xs uppercase tracking-widest mt-1 opacity-70">Coffees</div></div>
                         </div>
                       </div>
@@ -1409,10 +1409,10 @@ export default function App() {
                     {/* Left: Bio */}
                     <div className="flex-1 flex flex-col justify-between relative z-10" style={{ transform: 'translateZ(30px)' }}>
                       <p className="font-mono text-gray-400 text-xs leading-relaxed group-hover:text-gray-300 transition-colors">
-                        Obsessed with crafting extraordinary digital experiences. Bridging the gap between engineering and design through WebGL, micro-interactions, and physics engines.
+                        I architect novel systems and use AI to build them fast. Every project I touch starts as an impossible idea — I design the breakthroughs, then execute. Not limited to any language or domain.
                       </p>
                       <div className="flex gap-2 relative z-10 mt-2">
-                        {['Full-time', 'Freelance', 'Collabs'].map(tag => (
+                        {['Freelance', 'Open Source', 'System Design'].map(tag => (
                           <span key={tag} className="font-mono text-[10px] px-3 py-1 bg-white/5 text-gray-300 rounded-full group-hover:border-[#ccff00]/30 border border-transparent transition-colors uppercase tracking-widest">{tag}</span>
                         ))}
                       </div>
@@ -1426,16 +1426,16 @@ export default function App() {
                           <div className="absolute inset-0 bg-[#ccff00]/20 rounded-full animate-ping" />
                         </div>
                         <div>
-                          <div className="font-mono text-[10px] text-gray-400 uppercase tracking-widest">London</div>
-                          <div className="font-mono text-[9px] text-gray-600">51.5°N, 0.1°W</div>
+                          <div className="font-mono text-[10px] text-gray-400 uppercase tracking-widest">Dhanbad</div>
+                          <div className="font-mono text-[9px] text-gray-600">IIT Dhanbad, India</div>
                         </div>
                       </div>
                       {/* Spotify Now Playing */}
                       <div className="bg-zinc-900/80 rounded-xl p-3 border border-white/5 flex items-center gap-3 hover:border-green-500/50 transition-colors">
                         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white text-[10px] font-bold shrink-0">♪</div>
                         <div className="overflow-hidden flex-1">
-                          <div className="font-mono text-[10px] text-white truncate">Nightcall</div>
-                          <div className="font-mono text-[9px] text-gray-500 truncate">Kavinsky</div>
+                          <div className="font-mono text-[10px] text-white truncate">SystemSim</div>
+                          <div className="font-mono text-[9px] text-gray-500 truncate">Currently Building</div>
                         </div>
                         {/* Equalizer */}
                         <div className="flex items-end gap-[2px] h-4">
