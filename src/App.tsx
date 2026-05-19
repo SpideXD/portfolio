@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { Move, Github, Linkedin, Twitter, Dribbble, ExternalLink, ArrowUpRight, X, Copy, Check, MapPin, Clock, Volume2, VolumeX, Box, LayoutGrid, ArrowRight, Sparkles } from 'lucide-react';
 import { TransformWrapper, TransformComponent, useControls } from "react-zoom-pan-pinch";
 import Background3D from './components/Background3D';
-import ContactForm from './components/ContactForm';
+
 import { PhysicsStack } from './components/PhysicsStack';
 import { ProcessTimeline } from './components/ProcessTimeline';
 import { ExpertiseSection } from './components/ExpertiseSection';
@@ -860,6 +860,31 @@ const StartNodeContent = ({ started, onStart, loadingProgress }: { started: bool
 
 export default function App() {
   const isMobile = useIsMobile();
+
+  // Mobile layout with 3D background
+  if (isMobile) {
+    return <MobileApp />;
+  }
+
+  return <DesktopApp />;
+}
+
+// Separate mobile component to avoid hooks order issues
+function MobileApp() {
+  const transformRef = useRef({ x: -1000, y: -800, scale: 0.6 });
+
+  return (
+    <div className="relative w-full h-screen text-white font-sans overflow-x-hidden overflow-y-auto">
+      <Background3D transformRef={transformRef} />
+      <div className="grid-bg fixed inset-0 pointer-events-none" />
+      <div className="noise-bg fixed inset-0 pointer-events-none" />
+      <MobileLayout />
+    </div>
+  );
+}
+
+// Desktop component with all the original functionality
+function DesktopApp() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [experienceStarted, setExperienceStarted] = useState(false);
@@ -869,18 +894,6 @@ export default function App() {
   const { startHum, stopHum, isMuted, toggleMute, playUnlock, playWhoosh } = useAudio();
   const [discoveredNodes, setDiscoveredNodes] = useState<string[]>(['node-hero']);
   const discoveredNodesRef = useRef<Set<string>>(new Set(['node-hero']));
-
-  // Mobile layout with 3D background
-  if (isMobile) {
-    return (
-      <div className="relative w-full h-screen text-white font-sans overflow-x-hidden overflow-y-auto">
-        <Background3D transformRef={transformRef} />
-        <div className="grid-bg fixed inset-0 pointer-events-none" />
-        <div className="noise-bg fixed inset-0 pointer-events-none" />
-        <MobileLayout />
-      </div>
-    );
-  }
 
   const handleStart = (mode: 'explore' | 'direct') => {
     setExperienceStarted(true);
